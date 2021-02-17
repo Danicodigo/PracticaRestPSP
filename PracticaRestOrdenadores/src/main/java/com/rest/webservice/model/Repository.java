@@ -7,13 +7,28 @@ import java.util.Map;
 
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ *  Clase Repository.
+ *  esta clase generara unos datos ficticios en nuestro programa.
+ * 
+ * @author Dani Kuradchyk
+ */
 @RestController
 public class Repository {
 	
+	/** The ordenadores. que guarda los ordenadores */
 	static Map<String, Ordenador> ordenadores = new HashMap<>();
+	
+	/** The procesadores. guarda los procesadores*/
 	static Map<String, Procesador> procesadores = new HashMap<>();
+	
+	/** The fabricantes proc. guarda los fabricantes de los procesadores */
 	static Map<String, FabricanteProcesador> fabricantesProc = new HashMap<>();
 	
+	/**
+	 * Instantiates a new repository.
+	 * Introduzco los datos ficticios en el programa
+	 */
 	public Repository() {
 	
 		FabricanteProcesador fabProc = new FabricanteProcesador();
@@ -124,40 +139,116 @@ public class Repository {
 		ordenadores.put(ordenador.getId(), ordenador);
 	}
 	
+	/**
+	 * Removes the ordenador.
+	 *
+	 * @param id the id
+	 */
 	public void removeOrdenador(String id) {
 		ordenadores.remove(id);
 	}
+	
+	/**
+	 * Removes the procesador.
+	 *
+	 * @param id the id
+	 */
 	public void removeProcesador(String id) {
 		procesadores.remove(id);
 	}
+	
+	/**
+	 * Removes the fabricante prop.
+	 *
+	 * @param id the id
+	 */
 	public void removeFabricanteProp(String id) {
 		fabricantesProc.remove(id);
 	}
+	
+	/**
+	 * Put ordenador.
+	 *
+	 * @param id the id
+	 * @param ord the ord
+	 */
 	public void putOrdenador(String id, Ordenador ord) {
 		ordenadores.put(id, ord);
 	}
+	
+	/**
+	 * Put procesador.
+	 *
+	 * @param id the id
+	 * @param ord the ord
+	 */
 	public void putProcesador(String id, Procesador ord) {
 		procesadores.put(id, ord);
 	}
+	
+	/**
+	 * Put fabricante.
+	 *
+	 * @param id the id
+	 * @param ord the ord
+	 */
 	public void putFabricante(String id, FabricanteProcesador ord) {
 		fabricantesProc.put(id, ord);
 	}
 	
+	/**
+	 * Gets the ordenadores.
+	 *
+	 * @return the ordenadores
+	 */
 	public Collection<Ordenador> getOrdenadores(){
 		return ordenadores.values();
 	}
+	
+	/**
+	 * Gets the procesadores.
+	 *
+	 * @return the procesadores
+	 */
 	public Collection<Procesador> getProcesadores(){
 		return procesadores.values();
 	}
+	
+	/**
+	 * Gets the fabricantes proc.
+	 *
+	 * @return the fabricantes proc
+	 */
 	public Collection<FabricanteProcesador> getFabricantesProc(){
 		return fabricantesProc.values();
 	}
+	
+	/**
+	 * Gets the ordenador.
+	 *
+	 * @param id the id
+	 * @return the ordenador
+	 */
 	public Ordenador getOrdenador(String id) {
 		return ordenadores.get(id);
 	}
+	
+	/**
+	 * Gets the procesador.
+	 *
+	 * @param id the id
+	 * @return the procesador
+	 */
 	public Procesador getProcesador(String id) {
 		return procesadores.get(id);
 	}
+	
+	/**
+	 * Gets the fabricante proc.
+	 *
+	 * @param id the id
+	 * @return the fabricante proc
+	 */
 	public FabricanteProcesador getFabricanteProc(String id) {
 		return fabricantesProc.get(id);
 	}
